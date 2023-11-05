@@ -2,9 +2,11 @@ package com.hseungho.study.cleanarchitecture.account.application.service
 
 import com.hseungho.study.cleanarchitecture.account.application.port.`in`.SendMoneyCommand
 import com.hseungho.study.cleanarchitecture.account.application.port.`in`.SendMoneyUseCase
+import com.hseungho.study.cleanarchitecture.common.UseCase
 import org.springframework.transaction.annotation.Transactional
 
-open class SendMoneyService: SendMoneyUseCase {
+@UseCase
+class SendMoneyService : SendMoneyUseCase {
 
     @Transactional
     override fun sendMoney(command: SendMoneyCommand): Boolean {
