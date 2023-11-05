@@ -15,7 +15,7 @@ class AccountPersistenceAdapter(
     private val accountMapper: AccountMapper
 ): LoadAccountPort, UpdateAccountStatePort {
 
-    override fun load(
+    override fun loadAccount(
         accountId: Account.AccountId,
         baselineDate: LocalDateTime
     ): Account {

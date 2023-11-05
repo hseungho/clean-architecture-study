@@ -5,6 +5,6 @@ import java.time.LocalDateTime
 
 interface LoadAccountPort {
 
-    fun load(accountId: Account.AccountId, baselineDate: LocalDateTime): Account
+    fun loadAccount(accountId: Account.AccountId, baselineDate: LocalDateTime): Account
 
 }

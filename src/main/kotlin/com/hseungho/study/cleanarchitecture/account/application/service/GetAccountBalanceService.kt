@@ -13,7 +13,7 @@ open class GetAccountBalanceService(
 
     @Transactional
     override fun getAccountBalance(accountId: Account.AccountId): Money {
-        return loadAccountPort.load(accountId, LocalDateTime.now())
+        return loadAccountPort.loadAccount(accountId, LocalDateTime.now())
             .calculateBalance()
     }
 
