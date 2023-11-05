@@ -1,15 +1,11 @@
 package com.hseungho.study.cleanarchitecture.account.adapter.out.persistence
 
-import com.hseungho.study.cleanarchitecture.account.domain.Activity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import java.time.LocalDateTime
 
-
-
-
-interface ActivityRepository: JpaRepository<Activity, Long> {
+interface ActivityRepository: JpaRepository<ActivityJpaEntity, Long> {
 
     @Query(
         """
@@ -34,7 +30,7 @@ interface ActivityRepository: JpaRepository<Activity, Long> {
     fun getDepositBalanceUntil(
         @Param("accountId") accountId: Long,
         @Param("until") until: LocalDateTime
-    ): Long
+    ): Long?
 
     @Query(
         """
@@ -47,6 +43,6 @@ interface ActivityRepository: JpaRepository<Activity, Long> {
     fun getWithdrawalBalanceUntil(
         @Param("accountId") accountId: Long,
         @Param("until") until: LocalDateTime
-    ): Long
+    ): Long?
 
 }

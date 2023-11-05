@@ -13,7 +13,7 @@ class ActivityJpaEntity(
 
     @Id
     @GeneratedValue
-    val id: Long,
+    val id: Long? = null,
 
     @Column
     val ownerAccountId: Long,

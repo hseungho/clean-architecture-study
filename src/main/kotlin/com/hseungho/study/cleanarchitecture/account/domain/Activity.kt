@@ -17,6 +17,6 @@ data class Activity(
     val money: Money
 ) {
     data class ActivityId(
-        private val value: Long
+        val value: Long
     )
 }
