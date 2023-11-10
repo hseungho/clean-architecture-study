@@ -29,7 +29,7 @@ data class Account(
 
     private fun mayWithdraw(money: Money): Boolean {
         return Money.add(this.calculateBalance(), money.negate())
-            .isPositive()
+            .isPositiveOrZero()
     }
 
     fun deposit(money: Money, sourceAccountId: AccountId): Boolean {
