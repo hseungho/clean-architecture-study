@@ -28,7 +28,7 @@ object ActivityTestData {
         lateinit var money: Money
 
         fun withId(id: ActivityId?): ActivityBuilder {
-            this.id = id!!
+            this.id = id
             return this
         }
 
